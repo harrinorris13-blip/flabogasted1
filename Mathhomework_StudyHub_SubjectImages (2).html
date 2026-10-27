@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Komorebi</title>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%234285f4'/%3E%3Cpath d='M12 18 Q23 13 32 21 Q41 13 52 18 V46 Q41 41 32 49 Q23 41 12 46 Z' fill='white'/%3E%3Cpath d='M32 21 V49' stroke='%234285f4' stroke-width='3'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#121212;
+    color:white;
+}
+
+header{
+    background:#1f1f1f;
+    padding:20px;
+    text-align:center;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.games{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.card{
+    background:#1e1e1e;
+    border-radius:12px;
+    overflow:hidden;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+.card img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+}
+
+.card h2{
+    padding:10px;
+}
+
+.play-btn{
+    display:block;
+    text-align:center;
+    background:#00b894;
+    color:white;
+    padding:12px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.play-btn:hover{
+    background:#00a383;
+}
+
+.math-btn,
+.play-btn{
+    display:block;
+    width:240px;
+    max-width:calc(100% - 20px);
+    height:90px;
+    margin:12px auto;
+    font-size:0.9rem;
+    cursor:pointer;
+    padding:6px 10px;
+    border-radius:6px;
+    background-color:#4CAF50;
+    color:white;
+    border:none;
+    font-weight:bold;
+}
+
+.math-btn:hover,
+.play-btn:hover{
+    background-color:#45a049;
+}
+
+/* Larger, full-screen game hub layout */
+html, body { min-height:100%; }
+body { min-height:100vh; }
+header { padding:clamp(18px, 3vh, 32px); font-size:clamp(30px, 4vw, 44px); }
+.games {
+    min-height:calc(100vh - 105px);
+    box-sizing:border-box;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    grid-auto-rows:minmax(250px, 1fr);
+    gap:clamp(16px, 2vw, 28px);
+    padding:clamp(16px, 2.5vw, 32px);
+}
+.card { display:flex; flex-direction:column; min-width:0; }
+.card img { height:clamp(150px, 27vh, 300px); flex-shrink:0; }
+.card h2 { font-size:clamp(22px, 2.2vw, 32px); margin:8px 0; }
+.math-btn, .play-btn { width:min(300px, calc(100% - 20px)); height:clamp(70px, 10vh, 100px); font-size:clamp(16px, 1.5vw, 21px); }
+@media (max-width:650px) {
+    .games { grid-template-columns:1fr; grid-auto-rows:auto; }
+    .card img { height:220px; }
+}
+</style>
+</head>
+<body>
+<header>🌿 Komorebi</header>
+<div class="games"><div class="card">
+<img alt="Maths subject illustration" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22400%22%20viewBox%3D%220%200%20800%20400%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%25231d4ed8%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%252360a5fa%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ccircle%20cx%3D%22650%22%20cy%3D%2275%22%20r%3D%22135%22%20fill%3D%22%23ffffff%22%20opacity%3D%22.12%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22350%22%20r%3D%22170%22%20fill%3D%22%23ffffff%22%20opacity%3D%22.10%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22205%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%22132%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3E%E2%88%91%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22330%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EMaths%3C%2Ftext%3E%3C%2Fsvg%3E"/>
+<h2>Maths</h2>
+<button class="math-btn" onclick="openCDN('https://cdn.jsdelivr.net/gh/harrinorris13-blip/Olibfjdhd/YouTube.html', 'Maths')" type="button">Maths</button>
+</div><div class="card">
+<img alt="Science subject illustration" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22400%22%20viewBox%3D%220%200%20800%20400%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%2523065f46%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%252334d399%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ccircle%20cx%3D%22650%22%20cy%3D%2275%22%20r%3D%22135%22%20fill%3D%22%23ffffff%22%20opacity%3D%22.12%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22350%22%20r%3D%22170%22%20fill%3D%22%23ffffff%22%20opacity%3D%22.10%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22205%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%22132%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3E%E2%9A%97%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22330%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EScience%3C%2Ftext%3E%3C%2Fsvg%3E"/>
+<h2>Science</h2>
+<button class="math-btn" onclick="openCDN('https://cdn.jsdelivr.net/gh/Bobwastaked/ugs-singlefile/AASINGLEFILE.html', 'Science')" type="button">Science</button>
+</div><div class="card">
+<img alt="Geography subject illustration" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22400%22%20viewBox%3D%220%200%20800%20400%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%25230e7490%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%252367e8f9%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ccircle%20cx%3D%22650%22%20cy%3D%2275%22%20r%3D%22135%22%20fill%3D%22%23ffffff%22%20opacity%3D%22.12%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22350%22%20r%3D%22170%22%20fill%3D%22%23ffffff%22%20opacity%3D%22.10%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22205%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%22132%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3E%F0%9F%8C%8D%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22330%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EGeography%3C%2Ftext%3E%3C%2Fsvg%3E"/>
+<h2>Geography</h2>
+<button class="math-btn" onclick="openCDN('https://cdn.jsdelivr.net/gh/harrinorris13-blip/snake-cdn/snake.html', 'Geography')" type="button">Geography</button>
+</div><div class="card">
+<img alt="History subject illustration" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22400%22%20viewBox%3D%220%200%20800%20400%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%252392400e%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2523fbbf24%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ccircle%20cx%3D%22650%22%20cy%3D%2275%22%20r%3D%22135%22%20fill%3D%22%23ffffff%22%20opacity%3D%22.12%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22350%22%20r%3D%22170%22%20fill%3D%22%23ffffff%22%20opacity%3D%22.10%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22205%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%22132%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3E%F0%9F%8F%9B%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22330%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EHistory%3C%2Ftext%3E%3C%2Fsvg%3E"/>
+<h2>History</h2>
+<button class="math-btn" onclick="openCDN('https://cdn.jsdelivr.net/gh/harrinorris13-blip/my-html-cdn/flappy.html', 'History')" type="button">History</button>
+</div><div class="card">
+<img alt="English subject illustration" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22400%22%20viewBox%3D%220%200%20800%20400%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%25235b21b6%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2523c4b5fd%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ccircle%20cx%3D%22650%22%20cy%3D%2275%22%20r%3D%22135%22%20fill%3D%22%23ffffff%22%20opacity%3D%22.12%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22350%22%20r%3D%22170%22%20fill%3D%22%23ffffff%22%20opacity%3D%22.10%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22205%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%22132%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EAa%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22330%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EEnglish%3C%2Ftext%3E%3C%2Fsvg%3E"/>
+<h2>English</h2>
+<button class="math-btn" onclick="openCDN('https://cdn.jsdelivr.net/gh/harrinorris13-blip/sakura/sakura.html', 'English')" type="button">English</button>
+</div></div>
+<script>
+
+function openGameCDN(){
+    openCDN('https://cdn.jsdelivr.net/gh/Bobwastaked/ugs-singlefile/AASINGLEFILE.html', 'Game');
+}
+
+function openCDN(baseUrl, pageName){
+    // Open a blank tab immediately, then fetch and write the CDN HTML into it.
+    // This applies the same loading method to every card button for each card button.
+    const newWin = window.open('about:blank', '_blank');
+    if (!newWin) {
+        alert('Please allow pop-ups for this page, then try again.');
+        return;
+    }
+
+    const cdnUrl = baseUrl + (baseUrl.includes('?') ? '&' : '?') + 't=' + Date.now();
+    newWin.document.open();
+    newWin.document.write('<!doctype html><html><head><title>Loading ' + String(pageName || 'page').replace(/[&<>"']/g, '') + '...</title><meta name="viewport" content="width=device-width, initial-scale=1"></head><body style="font-family:Arial,sans-serif;padding:24px">Loading...</body></html>');
+    newWin.document.close();
+
+    fetch(cdnUrl)
+        .then(response => {
+            if (!response.ok) throw new Error('HTTP ' + response.status);
+            return response.text();
+        })
+        .then(html => {
+            if (newWin && !newWin.closed) {
+                newWin.document.open();
+                newWin.document.write(html);
+                newWin.document.close();
+            }
+        })
+        .catch(error => {
+            if (newWin && !newWin.closed) {
+                newWin.document.open();
+                newWin.document.write('<!doctype html><html><head><meta charset="utf-8"><title>Unable to load</title></head><body style="font-family:Arial,sans-serif;padding:24px"><h2>Could not load ' + String(pageName || 'page').replace(/[&<>"']/g, '') + '</h2><p>Please check your internet connection and try again.</p><p><a href="' + cdnUrl.replace(/&/g, '&amp;').replace(/"/g, '&quot;') + '">Open the CDN page directly</a></p></body></html>');
+                newWin.document.close();
+            }
+            console.error('CDN HTML fetch failed:', error);
+        });
+}
+</script>
+</body>
+</html>
